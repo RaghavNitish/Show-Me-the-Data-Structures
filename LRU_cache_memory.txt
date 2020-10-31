@@ -1,0 +1,20 @@
+﻿Why I chose the data structure I used
+
+I decided to use a dictionary for several reasons. Firstly, I used it because it is the only data structure 
+that allows anyone to retrieve any particular data in O(1) time given the key of the data. Unlike a list or 
+other data structures where we may have to iterate the entire data structure to find the data we need, dictionaries 
+can retrieve data in constant time when given a particular key. The get() operation in this project should take O(1) 
+time as per the project instructions, and this is only possible with the help of a dictionary. On the other hand, adding 
+a new piece of data must also take O(1) time according to the project instructions. A dictionary also satisfies this requirement 
+as adding a value to a dictionary can be done in constant time. Furthermore, the project requires that we remove the least recently 
+used data when the cache size is full, and this action was also required to be done in O(1) time. A dictionary can also successfully 
+achieve this in constant time using its .pop() function. 
+
+
+Time and Space Complexity
+
+The time complexity of the get() and set() functions is O(1) for reasons mentioned above. The time complexity of the LRU_Cache class 
+constructor is also O(1) as the code simply contains assignment statements. 
+
+The space complexity of the whole project is O(n). This is because we have an expanding dictionary, which is what models our cache, where 
+the total number of keys and values is equal to 2*n (n being the number of keys). Thus, the space complexity is O(2*n) = O(n).

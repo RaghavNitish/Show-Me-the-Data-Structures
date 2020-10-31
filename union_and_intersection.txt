@@ -1,0 +1,26 @@
+﻿Why I chose the data structure I used
+
+I didn’t use any particular data structures to solve the problems of finding the union and intersection of two linked lists. To solve such a challenge, we would
+obviously need linked list objects as parameters to our union() and intersection() functions. The general logic I used for the union() function is that I first chose 
+to iterate through the first linked list and insert only the values in the nodes that weren’t already present in a list. I then iterated through the second linked list 
+and inserted values into the list which weren’t already present. I then sorted the list and made a new linked list object which contained nodes with the values in the list. 
+I chose to solve the union between two linked lists this way because not only is it the most obvious approach and easy to understand, but also this method is quite time efficient. 
+
+The general logic I used for the intersection() function is that I first chose to iterate through each linked list object, and append the values of each linked list’s nodes 
+that weren’t already present in a list (2 lists were created - one for each linked list object). I then sorted the first list and checked to see what elements in the first list 
+were present in the second list. For whichever values that were present in both linked lists, I created a new linked list object and appended these values. I chose to solve the 
+intersection problem this way because I felt that this was the most obvious and understandable approach. The logic is not at all complex, and this method is also quite efficient. 
+
+
+Time and Space Complexity
+
+The time complexity of the union() function is O(n^2). This runtime comes from the while loops present on lines 51, 58, the .sort() function initiated on line 63, and the for loop 
+present on line 66. The while loops each have a runtime of O(n), whereas the for loop has an O(n^2) runtime. The for loop has a quadratic runtime because the .append() function 
+initiated inside the for loop takes O(n) time, so the combined runtime would be quadratic. The .sort() function takes an O(n) runtime as it visits every element in a list and sorts 
+all the values. Thus, the overall runtime is O(n + n + n + n*n) = O(n^2 + 3n) = O(n^2). The time complexity of the intersection() function is O(n^2). This runtime comes from the while 
+loops present on lines 84, 91, the .sort() function initiated on line 96, and the for loop present on line 98. The while loops each have a runtime of O(n), whereas the for loop 
+has an O(n^2) runtime. The for loop has a quadratic runtime because the .append() function initiated inside the for loop takes O(n) time, so the combined runtime would be quadratic. 
+The .sort() function also takes an O(n) runtime for reasons mentioned earlier. Thus, the overall time complexity is O(n + n + n + n*n) = O(n^2 + 3n) = O(n^2). 
+
+The space complexity of the union() function is O(n) as we have an expanding list (this list is declared on line 46). The space complexity of the intersection() function is 
+O(n + n) = O(2*n) = O(n) as we have two expanding lists (the lists are declared on lines 78 and 79).

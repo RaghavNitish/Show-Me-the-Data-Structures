@@ -1,0 +1,16 @@
+﻿Why I chose the data structure I used
+
+I chose to use a linked list to complete this project. The most logical implementation of a block chain would be using a linked list. Each block forms a 
+connection with the next block, and a chain forms as all blocks get connected. Such type of behaviour is best modelled in programming using a linked list data structure. 
+
+
+Time and Space Complexity
+
+The time complexity of the append() function in the BlockChain class is O(1). All the code inside this function simply takes constant time to execute. The chain_list() 
+function in the BlockChain class has an O(n) runtime. This is due to the while loop present on line 39, which iterates through the entire block chain. The time complexity 
+of the calc_hash() function in the Block class is O(1). All the code inside this function takes constant time to execute. The respective constructors of the BlockChain 
+and Block class have an O(1) runtime. All the code inside the constructors is simply assignment statements. 
+
+The space complexity of the append() function in the BlockChain class is O(1). Variables are simply being assigned values inside this function. On the other hand, the space
+complexity of the chain_list() function is O(n) as we have an expanding list. The calc_hash() function in the Block class and the constructors of the BlockChain and Block 
+classes have an O(1) space complexity as variables are simply being assigned values inside the function.

@@ -1,0 +1,26 @@
+﻿Why I chose the data structure I used
+
+I chose to use a min heap for extracting the nodes with the lowest frequencies for one major reason. A min heap is the best data structure to return a node 
+with the smallest frequency because sorting all the nodes to return the node with the smallest frequency is done in the most efficient manner possible. 
+Any other data structure used in its place for such a task will result in complex logic, which not only may not be efficient, but also difficult for someone to understand.
+
+
+Time and Space Complexity
+
+The time complexity of the huffman_encoding() function is O((n^2)logn). This is because of the for loops on lines 43, 54 and 78, and the while loop on line 60. Inside the while loop, 
+the build_min_heap() function call takes O(nlogn) time to execute. Inside the build_min_heap() function, the for loop on line 30 takes O(nlogn) time as the min_heapify() function called 
+inside the for loop on line 31 takes O(logn) time to execute. The min_heapify() function takes O(logn) time to execute because in the worst case, the root of the heap needs to be swapped 
+with its children at each level until the bottom (leaf) level of the tree is reached. This means that the runtime of min_heapify() is synonymous to the height of a tree (log n), and thus, 
+its runtime is O(log n). The build_min_heap() function is called twice inside the while loop on lines 61 and 64. Therefore, combining the runtimes of all the loops mentioned, we have that 
+O(n + n + n * (nlogn + nlogn) + n) = O(3n + (2n^2)logn) = O((n^2)logn). The time complexity of the huffman_decoding() function is O(n). This is due to the for loop present inside the 
+function on line 124. Inside the min_heap class, the min_heapify() function has an O(log n) runtime for reasons mentioned earlier and the constructor has an O(1) runtime as all the code 
+inside the constructor is just assignment statements. The build_min_heap() function in the min_heap class takes O(nlogn) runtime for reasons mentioned previously. The code_generator() 
+function and the Node class constructor have an O(1) time complexity as all statements inside take constant time to execute. 
+
+The space complexity of the huffman_encoding() function is O(n). This is because we have a list and a dictionary declared on lines 39 and 40, which are both expanding in the function. 
+While an expanding list has a space complexity of O(n), an expanding dictionary has a space complexity of O(2*n) as the total number of keys and values are twice the number of keys. 
+Thus, the space complexity of the huffman_encoding() function is O(n + 2*n) = O(3*n) = O(n). The space complexity of the huffman_decoding() function is O(1). This is because the 
+function only has an expanding string and other variables. A string of any size still occupies the same space. The code_generator() function has an O(n) space complexity as it contains 
+an expanding dictionary. Inside the min_heap class, the min_heapify() function and the constructor have an O(1) space complexity as variables are only being assigned values. 
+The build_min_heap() function in the min_heap class doesn’t really have a space complexity as not even variables are being assigned any values. The space complexity of the Node class 
+constructor is O(1) as variables are simply being assigned values.

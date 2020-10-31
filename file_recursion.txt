@@ -1,0 +1,13 @@
+﻿Why I chose the data structure I used
+
+As this was a purely recursion-based project, I didn’t take use of any data structures to solve the problem posed in the project. 
+I only used a list to keep track of all the paths which led to files with a particular suffix. In my recursive approach, I simply 
+went over each item present in the parent pathway (given as the parameter), and checked to see if the item was a directory or a file. 
+If it was a file, I checked if its suffix matched the suffix I was looking for. If it was a directory, I went inside it and checked the 
+items inside as well. 
+
+
+Time and Space Complexity
+
+The time complexity of the find_files() function is O(n) as a result of the for loop on line 26. Apart from this for loop, all other 
+lines take O(1) time to execute. The space complexity of the entire program is O(n). This is because we have an expanding list.

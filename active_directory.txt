@@ -1,0 +1,12 @@
+﻿Why I chose the data structure I used
+
+As this project is best done using recursion, I did not take use of any data structures. This project is best done using recursion 
+because when we are looking into whether a user exists in a group, there is no limit as to how many sub groups, sub sub groups, etc. there are 
+inside which a user may exist. The most effective way in programming to solve such a challenge is using recursion. Any other methods might end 
+up either being too complex for someone to understand, or not being able to solve the challenge as a user may exist in a very deep random sub directory.   
+
+
+Time and Space Complexity
+
+The time complexity of the is_user_in_group() function is O(n). This time complexity comes from the for loop on line 38. The space complexity of the 
+is_user_in_group() function is O(1). This is because we only use a single variable in the function and set its value accordingly if a user is found in a group.
